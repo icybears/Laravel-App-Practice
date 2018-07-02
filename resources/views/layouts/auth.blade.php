@@ -18,8 +18,6 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
        @yield('content')
-    </form>
   </body>
 </html>
