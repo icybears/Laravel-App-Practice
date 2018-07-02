@@ -24,8 +24,8 @@
         <div class="inner">
           <nav class="nav nav-masthead justify-content-left">
             <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Register</a>            
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="/register">Register</a>            
+            <a class="nav-link" href="/login">Login</a>
           </nav>
         </div>
       </header>
@@ -35,8 +35,8 @@
         <h1 class="cover-heading">Your Social Media</h1>
         <p class="lead">Morbi vehicula tempor suscipit. Duis ornare lobortis orci. Donec lacinia nunc eu pharetra ultricies. Donec eget condimentum leo, vitae semper metus. Donec porta fringilla posuere. Quisque laoreet eget mi in sagittis.</p>
         <p class="lead">
-          <div><a href="#" class="btn btn-lg btn-secondary">Register</a></div>
-          <a href="#" class="">Already have an account ? Login</a>          
+          <div><a href="/register" class="btn btn-lg btn-secondary">Register</a></div>
+          <a href="/login" class="">Already have an account ? Login</a>          
         </p>
       </main>
 
