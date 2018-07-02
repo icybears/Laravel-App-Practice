@@ -10,3 +10,8 @@ Route::post('/register','RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
+
+Route::get('/room/{room}', 'RoomsController@show');
+
+Route::post('/room', 'PostController@store');
+
