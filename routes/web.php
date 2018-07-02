@@ -2,9 +2,7 @@
 
 
 
-Route::get('/', function () {
-    return view('layouts.landing');
-})->name('home');
+Route::get('/','HomeController@index')->name('home');
 
 
 Route::get('/register','RegistrationController@create')->name('register');

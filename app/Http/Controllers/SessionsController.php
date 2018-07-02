@@ -19,7 +19,7 @@ class SessionsController extends Controller
         
                 if (auth()->attempt($credentials)) {
                     
-                    return redirect()->to('home');
+                    return redirect()->route('home');
                 }
 
                 return back()->with(['message' => 'Invalid email or password', 'style' => 'danger']);
