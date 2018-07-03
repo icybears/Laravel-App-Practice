@@ -29,7 +29,12 @@ class User extends Authenticatable
 
     public function room ()
     {
-        $this->hasOne(Room::class);
+        return $this->hasOne(Room::class);
+    }
+
+    public function posts ()
+    {
+        return $this->hasMany(Post::class);
     }
    
 }

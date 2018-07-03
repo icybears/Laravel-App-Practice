@@ -8,7 +8,7 @@ class Post extends Model
 {
     protected $fillable = ['body','user_id','room_id'];
 
-    public function author () 
+    public function user () 
     {
         return $this->belongsTo(User::class);
     }

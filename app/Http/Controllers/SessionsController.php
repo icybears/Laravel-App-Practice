@@ -24,4 +24,11 @@ class SessionsController extends Controller
 
                 return back()->with(['message' => 'Invalid email or password', 'style' => 'danger']);
     }
+
+    public function destroy ()
+    {
+        auth()->logout();
+
+        return redirect()->route('home');
+    }
 }

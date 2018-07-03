@@ -6,7 +6,7 @@
     <ul class="navbar-nav">
    
         <li class="nav-item text-nowrap px-3">
-            <a class="nav-link" href="#">Sign out</a>
+            <a class="nav-link" href="{{ route('logout') }}">Sign out</a>
         </li>
     </ul>
 </nav>
