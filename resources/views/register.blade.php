@@ -19,6 +19,8 @@ Create an account
   <input type="password" name="password_confirmation" id="inputPasswordConf" class="form-control" placeholder="Password confirmation" required>
 
   <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Register</button>
+  <a href="{{ route('login') }}">Already have an account ? Login</a>
+  
 <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 
 </form>
