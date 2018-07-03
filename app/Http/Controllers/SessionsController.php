@@ -9,7 +9,7 @@ class SessionsController extends Controller
 {
     public function create () 
     {
-      return view('/login');
+      return view('login');
     }
   
     public function store (Request $request) 
