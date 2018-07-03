@@ -7,8 +7,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                My Page
+              <a class="nav-link" href="/room/{{Auth::user()->room_id}}">
+                My Room
               </a>
             </li>
             <li class="nav-item">
