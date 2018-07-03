@@ -13,7 +13,9 @@ Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@destroy')->name('logout');
 
-Route::get('/room/{room}', 'RoomsController@show');
+Route::get('/room/{room}', 'RoomsController@show')->name('room');
 
 Route::post('/room/{room}', 'PostsController@store');
+
+Route::post('/room/{room}/posts/{post}/comments','CommentsController@store');
 
