@@ -18,4 +18,5 @@ class RoomsController extends Controller
         return view('room', compact('room'));
 
     }
+
 }

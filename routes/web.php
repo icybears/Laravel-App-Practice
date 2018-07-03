@@ -13,5 +13,5 @@ Route::post('/login', 'SessionsController@store');
 
 Route::get('/room/{room}', 'RoomsController@show');
 
-Route::post('/room', 'PostController@store');
+Route::post('/room/{room}', 'PostsController@store');
 
