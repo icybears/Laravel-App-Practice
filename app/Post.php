@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
@@ -23,4 +24,12 @@ class Post extends Model
         return $this->belongsTo(Room::class);
     }
 
+    public function deleteComments()
+    {
+        foreach( $this->comments as $comment)
+        {
+            DB::table('comments')->where('id', $comment->id)
+            ->delete();        
+        }
+    }
 }

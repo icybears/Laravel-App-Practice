@@ -39,6 +39,8 @@ class PostsController extends Controller
 
     public function destroy (Room $room, Post $post)
     {
+        $post->deleteComments();
+
         Post::destroy($post->id);
 
         return redirect()->back();
