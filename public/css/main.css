@@ -100,3 +100,14 @@ body {
   
   .border-top { border-top: 1px solid #e5e5e5; }
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+  .post .media .post-delete-btn,
+  .post .media .post-edit-btn {
+    display:none;
+  }
+ 
+
+  .post .media:hover .post-delete-btn,
+  .post .media:hover .post-edit-btn  {
+    display:block;
+  }

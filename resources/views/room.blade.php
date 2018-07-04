@@ -8,7 +8,7 @@
         @include('posts.create')
     <hr>
     <section>
-        @foreach($room->posts as $post)
+        @foreach($room->posts()->orderBy('updated_at','desc')->get() as $post)
             @include('posts.show')
         @endforeach
     </section>
