@@ -48,6 +48,9 @@ class ProfileController extends Controller
                     'location' => request('location')
                 ]);
 
-        return redirect()->route('profile', $user->id)->with('message','Profile updated');
+        return redirect()->route('profile', $user->id)->with([
+                        'message'=>'Profile updated',
+                        'style' => 'success'
+                ]);
     }
 }
