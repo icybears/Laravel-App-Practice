@@ -29,3 +29,5 @@ Route::patch('/room/{room}/posts/{post}', 'PostsController@update');
 
 Route::post('/room/{room}/posts/{post}/comments','CommentsController@store');
 
+
+Route::get('/profile/{user}', 'ProfilesController@show');

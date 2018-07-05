@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->integer('room_id')->nullable();
             $table->string('password');
+            $table->string('bio')->nullable();
+            $table->string('interests')->nullable();
+            $table->string('location')->nullable();            
+            $table->text('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
