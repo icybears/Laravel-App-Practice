@@ -17,7 +17,7 @@
                         <div class="col-4">
                                <img src="https://picsum.photos/g/200/300" alt=""> 
                                @if(Auth::id() == $user->id)
-                               <a class="btn btn-primary mt-4" href="#" role="button">Edit Profile</a>
+                               <a class="btn btn-primary mt-4" href='{{ url("/profile/". Auth::id() . "/edit") }}' role="button">Edit Profile</a>
                                @endif
                         </div>
                     </div>

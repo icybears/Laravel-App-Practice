@@ -111,3 +111,11 @@ body {
   .post .media:hover .post-edit-btn  {
     display:block;
   }
+
+  #imgPreview {
+    width:100%;
+  }
+
+  #imgPreviewWrapper{
+    width:250px;
+  }
