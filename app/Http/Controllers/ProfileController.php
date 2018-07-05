@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -36,16 +37,30 @@ class ProfileController extends Controller
             $this->validate(request(),[
                 'bio' => 'max:120',
                 'interests' => 'max:120',
-                'location' => 'max:30'
+                'location' => 'max:30',
+                'image'=> 'mimes:jpeg,jpg,bmp,png|dimensions:min_width=100,min_height=100,max_width:500,max_height:500'
             ]);
         }
 
+        if(request('image')){
+
+            $uploadedImage = request('image');
+            $imageName = $user->id . time() . "." . $uploadedImage->getClientOriginalExtension();
+            Storage::disk('public')->put("users_profile_image/$imageName", file_get_contents($uploadedImage));
+        }
+        else {
+            $imageName = null;
+        }
+        
+        
         User::where('id', $user->id)
                 ->update([
                     'username' => request('username'),
                     'bio' => request('bio'),
                     'interests' => request('interests'),
-                    'location' => request('location')
+                    'location' => request('location'),
+                    'image' => $imageName
+                    
                 ]);
 
         return redirect()->route('profile', $user->id)->with([

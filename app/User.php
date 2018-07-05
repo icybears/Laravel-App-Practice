@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -37,4 +38,12 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
    
+    public function getImage()
+    {
+        if( ! $this->image){
+            return;
+        }
+        //  Storage::url($this->image));
+        return Storage::url('users_profile_image/' . $this->image);
+    }
 }

@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('bio')->nullable();
             $table->string('interests')->nullable();
             $table->string('location')->nullable();            
-            $table->text('image')->nullable();
+            $table->string('image')->default('default.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

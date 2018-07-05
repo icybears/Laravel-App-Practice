@@ -17,7 +17,7 @@
                             <p><strong>Location:</strong>&nbsp;{!! is_null($user->location) ? "<span class='text-muted'>No location specified yet</span>": $user->location !!} </p>
                         </div>
                         <div class="col-4">
-                               <img src="https://picsum.photos/g/200/300" alt=""> 
+                                <div id="imgPreviewWrapper"><img id="imgPreview" src='{{ $user->getImage() }}' alt="{{ $user->username . ' profile image' }}"> </div>
                                @if(Auth::id() == $user->id)
                                <a class="btn btn-primary mt-4" href='{{ url("/profile/". Auth::id() . "/edit") }}' role="button">Edit Profile</a>
                                @endif

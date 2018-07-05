@@ -3,7 +3,7 @@
 
 <div class="card mx-auto">
         <div class="card-body">
-                <form method="POST" action='{{ url("/profile/" . $user->id) }}' class="row ">
+                <form class="row " method="POST" action='{{ url("/profile/" . $user->id) }}' enctype="multipart/form-data" >
                     {{ method_field('PATCH') }}
                     {{ csrf_field() }}
                         <div class="col-12">
@@ -31,10 +31,10 @@
                         </div>
                         <div class="col-2"></div>
                         <div class="col-4">
-                               <div id="imgPreviewWrapper"><img id="imgPreview" class="mt-4" src="https://picsum.photos/g/200/300" alt=""></div>
+                               <div id="imgPreviewWrapper"><img id="imgPreview" class="mt-4" src="{{ $user->getImage() }}" alt="{{ $user->username . ' profile image' }}"></div>
                                <div class="form-group">
                                  <label for="">Image</label>
-                                 <input type="file" class="form-control-file" onchange="document.getElementById('imgPreview').src = window.URL.createObjectURL(this.files[0])" aria-describedby="fileHelpId">
+                                 <input type="file" name="image" class="form-control-file" onchange="document.getElementById('imgPreview').src = window.URL.createObjectURL(this.files[0])" aria-describedby="fileHelpId">
                                  <small id="fileHelpId" class="form-text text-muted">Help text</small>
                                </div> 
                              
