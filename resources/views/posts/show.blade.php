@@ -2,8 +2,8 @@
 @include('partials.modal-delete-post')
 @include('partials.modal-update-post')
         <div class=" col-md-8 media border shadow-sm p-2 mb-3 bg-white rounded w-50 mx-auto">
-            <img class="mr-3 rounded-circle" src="https://picsum.photos/64/64?image=45" alt="Generic placeholder image">
-            <div class="media-body">
+            <div class="minImgWrapper"><a href='{{ url("/profile/" . $post->user->id) }}'><img class="minImg mr-3 rounded-circle" src='{{ $post->user->getImage() }}' alt="{{ $post->user->username . ' profile image' }}"></a></div>
+            <div class="ml-1 media-body">
                 <h5 class="mt-0"><a href='{{ url("/profile/" . $post->user->id) }}'>{{ $post->user->username }}</a>
                      @if(auth()->user()->room_id == $room->id)
                             <button class="post-delete-btn btn btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
