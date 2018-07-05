@@ -3,7 +3,7 @@
           <img class="rounded-circle" src="https://picsum.photos/64/64?image=83" alt="Generic placeholder image">
         </a>
         <div class="media-body">
-          <h5 class="mt-0">{{ $comment->user->username }}</h5>
-          {{ $comment->body }}
+          <h5 class="mt-0"><a href='{{ url("profile/" . $comment->user->id) }}'>{{ $comment->user->username }}</a></h5>
+          {{ $comment->body }}<span class="text-muted"> {{ $comment->updated_at->diffForHumans() }} </span>
         </div>
 </div>
