@@ -30,6 +30,8 @@ Route::patch('/room/{room}/posts/{post}', 'PostsController@update');
 Route::post('/room/{room}/posts/{post}/comments','CommentsController@store');
 
 
-Route::get('/profile/{user}', 'ProfileController@show');
+Route::get('/profile/{user}', 'ProfileController@show')->name('profile');
 
 Route::get('/profile/{user}/edit', 'ProfileController@edit');
+Route::patch('/profile/{user}/', 'ProfileController@update');
+

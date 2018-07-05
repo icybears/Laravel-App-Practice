@@ -5,6 +5,8 @@
         <div class="card-body">
                 <div class="row ">
                         <div class="col-12">
+                            @include('partials.errors')
+                            @include('partials.message')
                             <h3>Profile of {{ $user->username }}</h3>
                             <hr>
                         </div>

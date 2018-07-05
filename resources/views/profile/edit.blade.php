@@ -3,8 +3,11 @@
 
 <div class="card mx-auto">
         <div class="card-body">
-                <div class="row ">
+                <form method="POST" action='{{ url("/profile/" . $user->id) }}' class="row ">
+                    {{ method_field('PATCH') }}
+                    {{ csrf_field() }}
                         <div class="col-12">
+                            @include('partials.errors')
                             <h3>Profile of {{ $user->username }}</h3>
                             <hr>
                         </div>
@@ -15,7 +18,7 @@
                             </p>
                             <p class="form-group">
                                 <label>Bio:</label>
-                                <textarea name="bio" class="form-control" cols="30" rows="2">{{ $user->bio }}</textarea>
+                                <textarea name="bio" name="bio" class="form-control" cols="30" rows="2">{{ $user->bio }}</textarea>
                             </p>
                             <p class="form-group">
                                 <label>Interests:</label>
@@ -39,7 +42,7 @@
                         <div class="col">
                             <button type="submit" class="btn btn-primary px-4">Save</button>
                         </div>
-                    </div>
+                    </form>
         </div>
       </div>
     
