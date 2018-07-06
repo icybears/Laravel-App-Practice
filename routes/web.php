@@ -37,3 +37,4 @@ Route::get('/profile/{user}', 'ProfileController@show')->name('profile');
 Route::get('/profile/{user}/edit', 'ProfileController@edit');
 Route::patch('/profile/{user}/', 'ProfileController@update');
 
+Route::get('/rooms', 'RoomsController@index' );

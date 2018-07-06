@@ -8,7 +8,7 @@ class Room extends Model
 {
     protected $fillable = ['user_id'];
 
-    public function owner () 
+    public function user () 
     {
         return $this->belongsTo(User::class);
     }

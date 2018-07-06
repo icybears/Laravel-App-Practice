@@ -7,6 +7,11 @@
               </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href='{{ url("/rooms") }}'>
+                   Explore Rooms
+                </a>
+              </li>
+            <li class="nav-item">
               <a class="nav-link" href='{{ url("/room/" . Auth::user()->room_id)}}'>
                 My Room
               </a>

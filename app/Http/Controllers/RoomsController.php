@@ -13,9 +13,16 @@ class RoomsController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $rooms = Room::all();
+
+        return view('rooms.index', compact('rooms'));
+    }
+
     public function show (Room $room) {
 
-        return view('room', compact('room'));
+        return view('rooms.show', compact('room'));
 
     }
 
