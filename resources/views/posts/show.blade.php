@@ -22,7 +22,11 @@
                     </h5>
                 {{ $post->body }}
                 <br>
-                <span class="text-muted"> {{ $post->updated_at->diffForHumans() }}</span>
+                <span class="text-muted"> {{ $post->created_at->diffForHumans() }}</span>
+                @if( $post->created_at != $post->updated_at)
+                <span class="text-muted font-weight-light font-italic">&nbsp;Edited {{ $post->updated_at->diffForHumans() }}</span>
+                @endif
+
                 
                 @include('comments.create')
 

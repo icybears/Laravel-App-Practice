@@ -21,7 +21,10 @@
             </button> 
             @endif 
         </h5>
-        {{ $comment->body }}<span class="text-muted"> {{ $comment->updated_at->diffForHumans() }} </span>
+        {{ $comment->body }}<span class="text-muted"> {{ $comment->created_at->diffForHumans() }} </span>  
+        @if( $comment->created_at != $comment->updated_at)
+        <span class="text-muted font-weight-light font-italic">&nbsp;Edited {{ $comment->updated_at->diffForHumans() }}</span>
+        @endif
          
        
     </div>
