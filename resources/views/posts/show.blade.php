@@ -6,13 +6,19 @@
             <div class="ml-1 media-body">
                 <h5 class="mt-0"><a href='{{ url("/profile/" . $post->user->id) }}'>{{ $post->user->username }}</a>
                      @if(auth()->user()->room_id == $room->id)
-                            <button class="post-delete-btn btn btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
+                            <button class="post-delete-btn btn btn-sm btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
                                 &times;
                             </button>
-                            <button class="post-edit-btn btn btn-outline-primary float-right mr-1" data-toggle="modal" data-target="#updateModal{{$post->id}}">
-                                    edit
-                            </button>
                     @endif
+                    @if(auth()->id() == $post->user->id)
+                    <button class="post-delete-btn btn btn-sm btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
+                            &times;
+                        </button>
+                    <button class="post-edit-btn btn btn-sm btn-outline-primary float-right mr-1" data-toggle="modal" data-target="#updateModal{{$post->id}}">
+                            edit
+                    </button>
+                    @endif
+                   
                     </h5>
                 {{ $post->body }}
                 <br>

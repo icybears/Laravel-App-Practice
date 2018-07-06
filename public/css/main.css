@@ -112,6 +112,17 @@ body {
     display:block;
   }
 
+  .comment .comment-delete-btn,
+  .comment .comment-edit-btn {
+    display:none;
+  }
+ 
+
+  .comment:hover .comment-delete-btn,
+  .comment:hover .comment-edit-btn  {
+    display:block;
+  }
+
   #imgPreview {
     width:100%;
   }

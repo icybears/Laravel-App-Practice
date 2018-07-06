@@ -15,6 +15,7 @@
                             <p><strong>Bio:</strong>&nbsp;{!! is_null($user->bio) ? "<span class='text-muted'>No bio provided yet</span>": $user->bio !!}</p>
                             <p><strong>Interests:</strong>&nbsp;{!! is_null($user->interests) ? "<span class='text-muted'>No interests specified yet</span>": $user->interests !!}</p>
                             <p><strong>Location:</strong>&nbsp;{!! is_null($user->location) ? "<span class='text-muted'>No location specified yet</span>": $user->location !!} </p>
+                            <p class="mt-4"><strong><a href='{{ url("/room/" . $user->room_id) }}'>Go to {{$user->username}}'s room</a></strong></p>
                         </div>
                         <div class="col-4">
                                 <div id="imgPreviewWrapper"><img id="imgPreview" src='{{ $user->getImage() }}' alt="{{ $user->username . ' profile image' }}"> </div>
