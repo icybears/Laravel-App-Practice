@@ -10,6 +10,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            @include('partials.errors')
             <form method="POST" action='{{ url("/room/$room->id/posts/$post->id") }}'>
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}

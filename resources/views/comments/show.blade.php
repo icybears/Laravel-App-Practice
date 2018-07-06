@@ -1,4 +1,6 @@
 <div class="media comment mt-3">
+    @include('partials.modal-delete-comment')
+    @include('partials.modal-update-comment')
     <a class="mr-1 minImgWrapper" href='{{ url("/profile/" . $comment->user->id) }}'>
          <img class="minImg rounded-circle" src='{{ $comment->user->getImage() }}' alt="{{ $comment->user->username . ' profile image' }}">
         </a>

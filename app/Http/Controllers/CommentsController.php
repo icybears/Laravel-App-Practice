@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\Comment;
 use App\Post;
 use App\Room;
@@ -25,10 +27,22 @@ class CommentsController extends Controller
 
     }
 
-    public function destroy(Room $room, Comment $comment){
+    public function update(Room $room, Post $post, Comment $comment)
+    {
+        $this->validate(request(),
+        ['body' => 'required|min:2']);
+
+        DB::table('comments')
+            ->where('id', $comment->id)
+            ->update(['body' => trim(request('body'))]);
+
+            return back();
+    }
+
+    public function destroy(Room $room,Post $post, Comment $comment){
 
         Comment::destroy($comment->id);
-        
+
         return redirect()->back();
     }
 }

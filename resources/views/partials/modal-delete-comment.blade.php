@@ -15,7 +15,7 @@
             </div>
             <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <form method="POST" action='{{ url("/room/$room->id/comments/$comment->id") }}'>
+                    <form method="POST" action='{{ url("/room/$room->id/posts/$post->id/comments/$comment->id") }}'>
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button type="submit" class="btn btn-danger">Yes, delete</button>
