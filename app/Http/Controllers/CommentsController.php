@@ -32,11 +32,10 @@ class CommentsController extends Controller
         $this->validate(request(),
         ['body' => 'required|min:2']);
 
-        DB::table('comments')
-            ->where('id', $comment->id)
-            ->update(['body' => trim(request('body'))]);
-
-            return back();
+        $comment->body = trim(request('body'));
+        $comment->save();
+      
+        return back();
     }
 
     public function destroy(Room $room,Post $post, Comment $comment){

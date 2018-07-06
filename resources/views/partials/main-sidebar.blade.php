@@ -3,21 +3,21 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link " href="#">
-                 Activity
+                 Activity Feed
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::current()->uri == 'rooms' ? 'active' : '' }}" href='{{ url("/rooms") }}'>
+                <a class="nav-link {{ stristr(Route::current()->uri,'rooms') ? 'active' : '' }}" href='{{ url("/rooms") }}'>
                    Explore Rooms
                 </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link {{ Route::current()->uri == 'room/{room}'? 'active' : '' }}" href='{{ url("/room/" . Auth::user()->room_id)}}'>
+              <a class="nav-link {{ stristr(Route::current()->uri,'room/{room}') ? 'active' : '' }}" href='{{ url("/room/" . Auth::user()->room_id)}}'>
                 My Room
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Route::current()->uri == 'profile/{user}'? 'active' : '' }}" href='{{ url("/profile/" . Auth::id()) }}'>
+              <a class="nav-link {{ stristr(Route::current()->uri,'profile/{user}') ? 'active' : '' }}" href='{{ url("/profile/" . Auth::id()) }}'>
                 My Profile
               </a>
             </li>

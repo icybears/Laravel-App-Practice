@@ -30,9 +30,12 @@ class PostsController extends Controller
         $this->validate(request(),
         ['body' => 'required|min:2']);
 
-        DB::table('posts')
-            ->where('id', $post->id)
-            ->update(['body' => trim(request('body'))]);
+       
+
+        $post->body = trim(request('body'));
+
+        $post->save();
+
 
             return back();
     }
