@@ -26,6 +26,7 @@ Route::delete('/room/{room}/posts/{post}', 'PostsController@destroy');
 
 Route::patch('/room/{room}/posts/{post}', 'PostsController@update');
     
+Route::delete('/room/{room}/comments/{comment}','CommentsController@destroy');
 
 Route::post('/room/{room}/posts/{post}/comments','CommentsController@store');
 

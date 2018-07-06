@@ -24,4 +24,11 @@ class CommentsController extends Controller
         return back();
 
     }
+
+    public function destroy(Room $room, Comment $comment){
+
+        Comment::destroy($comment->id);
+        
+        return redirect()->back();
+    }
 }
