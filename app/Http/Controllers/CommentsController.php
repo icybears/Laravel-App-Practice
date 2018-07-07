@@ -23,6 +23,11 @@ class CommentsController extends Controller
             'post_id' => $post->id
         ]);
 
+        if ($comment->user->comments_count < 0 )
+        {
+            $comment->user->resetCommentsCount();
+        }
+
         $comment->user->incrementCommentsCount();
 
         return back();
@@ -43,8 +48,8 @@ class CommentsController extends Controller
     public function destroy(Room $room,Post $post, Comment $comment){
 
         $comment->user->decrementCommentsCount();
-        
-        if ($comment->user->decrementCommentsCount() < 0 )
+
+        if ($comment->user->comments_count < 0 )
         {
             $comment->user->resetCommentsCount();
         }

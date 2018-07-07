@@ -22,6 +22,10 @@ class PostsController extends Controller
             'user_id' => auth()->id(),
             'room_id' => $room_id
         ]);
+
+        if($post->user->posts_count < 0){
+            $post->user->resetCommentsCount();
+        }
       
         $post->user->incrementPostsCount();
 
