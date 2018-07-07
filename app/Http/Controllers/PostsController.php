@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Room;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -16,11 +17,14 @@ class PostsController extends Controller
             'body' => 'required|min:1'
         ]);
 
-        Post::create([
+        $post = Post::create([
             'body' => trim(request('body')),
             'user_id' => auth()->id(),
             'room_id' => $room_id
         ]);
+      
+        $post->user->incrementPostsCount();
+
 
         return redirect("/room/$room_id");
     }
@@ -44,6 +48,12 @@ class PostsController extends Controller
     {
         $post->deleteComments();
 
+        $post->user->decrementPostsCount();
+
+        // to avoid the bug where a post is posted twice but only counts for 1
+        if($post->user->posts_count < 0){
+            $post->user->resetCommentsCount();
+        }
         Post::destroy($post->id);
 
         return redirect()->back();

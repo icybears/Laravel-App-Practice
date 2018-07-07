@@ -46,4 +46,37 @@ class User extends Authenticatable
         //  Storage::url($this->image));
         return Storage::url('users_profile_image/' . $this->image);
     }
+
+    public function incrementPostsCount()
+    {
+        $this->posts_count++;
+        $this->save();
+    }
+    public function decrementPostsCount()
+    {
+        $this->posts_count--;
+        $this->save();
+    }
+    public function resetPostsCount()
+    {
+        $this->posts_count = 0;
+        $this->save();
+    }
+
+    public function incrementCommentsCount()
+    {
+        $this->comments_count++;
+        $this->save();
+    }
+    public function decrementCommentsCount()
+    {
+        $this->comments_count--;
+        $this->save();
+    }
+    public function resetCommentsCount()
+    {
+        $this->comments_count = 0;
+        $this->save();
+    }
+
 }

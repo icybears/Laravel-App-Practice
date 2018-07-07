@@ -17,11 +17,13 @@ class CommentsController extends Controller
             'body' => 'required'
         ]);
 
-        Comment::create([
+       $comment = Comment::create([
             'body' => request('body'),
             'user_id' => auth()->id(),
             'post_id' => $post->id
         ]);
+
+        $comment->user->incrementCommentsCount();
 
         return back();
 
@@ -40,7 +42,16 @@ class CommentsController extends Controller
 
     public function destroy(Room $room,Post $post, Comment $comment){
 
+        $comment->user->decrementCommentsCount();
+        
+        if ($comment->user->decrementCommentsCount() < 0 )
+        {
+            $comment->user->resetCommentsCount();
+        }
+       
         Comment::destroy($comment->id);
+
+
 
         return redirect()->back();
     }

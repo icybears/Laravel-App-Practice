@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('interests')->nullable();
             $table->string('location')->nullable();            
             $table->string('image')->default('default.jpg');
+            $table->integer('posts_count')->default(0);
+            $table->integer('comments_count')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

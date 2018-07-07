@@ -30,6 +30,8 @@ class Post extends Model
     {
         foreach( $this->comments as $comment)
         {
+            $comment->user->decrementCommentsCount();
+            
             DB::table('comments')->where('id', $comment->id)
             ->delete();        
         }

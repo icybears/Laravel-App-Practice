@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('color')->nullable();
+            $table->integer('posts_count')->default(0);
             $table->integer('user_id');
             $table->timestamps();
         });
