@@ -17,4 +17,15 @@ class Room extends Model
     {
         return $this->hasMany(Post::class);
     }
+    public function incrementPostsCount()
+    {
+        $this->posts_count++;
+        $this->save();
+    }
+
+    public function decrementPostsCount()
+    {
+        $this->posts_count--;
+        $this->save();
+    }
 }

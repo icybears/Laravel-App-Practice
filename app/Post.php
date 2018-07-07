@@ -26,6 +26,18 @@ class Post extends Model
         return $this->belongsTo(Room::class);
     }
 
+    public function incrementCommentsCount()
+    {
+        $this->comments_count++;
+        $this->save();
+    }
+
+    public function decrementCommentsCount()
+    {
+        $this->comments_count--;
+        $this->save();
+    }
+
     public function deleteComments()
     {
         foreach( $this->comments as $comment)

@@ -10,7 +10,10 @@ use App\User;
 
 class PostsController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store ($room_id) 
     {
         $this->validate(request(), [
@@ -23,9 +26,8 @@ class PostsController extends Controller
             'room_id' => $room_id
         ]);
 
-        if($post->user->posts_count < 0){
-            $post->user->resetCommentsCount();
-        }
+        Room::find($room_id)->incrementPostsCount();
+      
       
         $post->user->incrementPostsCount();
 
@@ -50,14 +52,13 @@ class PostsController extends Controller
 
     public function destroy (Room $room, Post $post)
     {
+
+        $room->decrementPostsCount();
+
         $post->deleteComments();
 
         $post->user->decrementPostsCount();
 
-        // to avoid the bug where a post is posted twice but only counts for 1
-        if($post->user->posts_count < 0){
-            $post->user->resetCommentsCount();
-        }
         Post::destroy($post->id);
 
         return redirect()->back();
