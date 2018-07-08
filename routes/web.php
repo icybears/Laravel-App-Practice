@@ -27,6 +27,8 @@ Route::get('/room/{room}', 'RoomsController@show')->name('room');
 ////////
 
 // POSTS
+Route::get('/room/{room}/posts/{post}', 'PostsController@show');
+
 Route::post('/room/{room}/posts', 'PostsController@store');
 
 Route::delete('/room/{room}/posts/{post}', 'PostsController@destroy');

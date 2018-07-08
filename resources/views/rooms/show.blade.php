@@ -10,7 +10,7 @@
     <section>
         @if(count($room->posts))
             @foreach($room->posts()->orderBy('updated_at','desc')->get() as $post)
-                @include('posts.show')
+                @include('posts.post')
             @endforeach
         @else
             <h1 class="text-muted text-center font-weight-light"> Nothing posted here yet !</h1>

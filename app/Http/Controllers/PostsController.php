@@ -14,6 +14,13 @@ class PostsController extends Controller
     {
         $this->middleware('auth');
     }
+
+   public function show (Room $room, Post $post)
+   {
+       return view('posts.show', compact('room', 'post'));
+
+   }
+
     public function store ($room_id) 
     {
         $this->validate(request(), [
