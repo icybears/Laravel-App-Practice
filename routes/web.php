@@ -24,6 +24,8 @@ Route::get('/logout', 'SessionsController@destroy')->name('logout');
 Route::get('/rooms', 'RoomsController@index' );
 
 Route::get('/room/{room}', 'RoomsController@show')->name('room');
+
+Route::get('/room/{room}/edit', 'RoomsController@edit');
 ////////
 
 // POSTS

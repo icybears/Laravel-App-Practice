@@ -25,4 +25,9 @@ class RoomsController extends Controller
 
     }
 
+    public function edit (Room $room)
+    {
+        return view('rooms.edit', compact('room'));
+    }
+
 }
