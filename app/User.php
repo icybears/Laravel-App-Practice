@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -38,6 +39,14 @@ class User extends Authenticatable
         return $this->belongsToMany(Room::class);
     }
 
+    public function isSubscribedTo(Room $room)
+    {
+       $rooms = DB::table('room_user')->where('user_id', $this->id)->pluck('room_id');
+      
+      return $rooms->contains($room->id);
+       
+     
+    }
     public function posts ()
     {
         return $this->hasMany(Post::class);

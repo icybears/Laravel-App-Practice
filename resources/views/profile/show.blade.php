@@ -26,6 +26,20 @@
                     </div>
         </div>
       </div>
+
+      <div class="card mx-auto">
+        <div class="card-body">
+            <h3>Subscribed rooms</h3>
+            <ul class="list-group w-50">
+                @if(!count($user->rooms))
+                    <div class="text-muted">This User is not subscribed to any room</div>
+                @endif
+                @foreach($user->rooms as $room)
+                    <li class="list-group-item">{{ $room->name }}&nbsp;<a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn-sm btn-link ">unsubscribe</a></li>
+                @endforeach
+            </ul>
+        </div>
+      </div>
     
 
 @endsection

@@ -48,4 +48,22 @@ class RoomsController extends Controller
 
     }
 
+    public function subscribe(Room $room)
+    {
+        $room->users()->attach(auth()->id());
+
+        return back();
+    }
+
+    public function unsubscribe(Room $room)
+    {
+        $room->users()->detach(auth()->id());
+
+        return back();
+    }
+
+
+   
+
+
 }

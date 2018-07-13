@@ -29,6 +29,11 @@ Route::get('/room/{room}/edit', 'RoomsController@edit');
 
 Route::patch('/room/{room}/edit', 'RoomsController@update');
 
+Route::get('/room/{room}/subscribe', 'RoomsController@subscribe');
+
+Route::get('/room/{room}/unsubscribe', 'RoomsController@unsubscribe');
+
+
 ////////
 
 // POSTS

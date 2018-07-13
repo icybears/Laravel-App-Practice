@@ -22,6 +22,8 @@ class Room extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+   
     public function incrementPostsCount()
     {
         $this->posts_count++;
