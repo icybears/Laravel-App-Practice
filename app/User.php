@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->hasOne(Room::class);
     }
 
+    public function rooms ()
+    {
+        return $this->belongsToMany(Room::class);
+    }
+
     public function posts ()
     {
         return $this->hasMany(Post::class);

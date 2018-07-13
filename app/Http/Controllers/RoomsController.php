@@ -30,4 +30,22 @@ class RoomsController extends Controller
         return view('rooms.edit', compact('room'));
     }
 
+    public function update(Room $room)
+    {
+        $this->validate(request(),
+        [
+            'name' => 'min:1|max:25',
+            'description' => 'min:3|max:120'
+        ]);
+
+        $room->update([
+            'name' => trim(request('name')),
+            'description' => trim(request('description'))
+        ]);
+
+
+        return redirect()->route('room', ['room' => $room->id]);
+
+    }
+
 }

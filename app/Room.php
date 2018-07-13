@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    protected $fillable = ['user_id'];
+    protected $fillable = ['user_id','name','description'];
 
     public function user () 
     {
@@ -16,6 +16,11 @@ class Room extends Model
     public function posts () 
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function users ()
+    {
+        return $this->belongsToMany(User::class);
     }
     public function incrementPostsCount()
     {

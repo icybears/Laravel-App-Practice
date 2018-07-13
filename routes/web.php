@@ -26,6 +26,9 @@ Route::get('/rooms', 'RoomsController@index' );
 Route::get('/room/{room}', 'RoomsController@show')->name('room');
 
 Route::get('/room/{room}/edit', 'RoomsController@edit');
+
+Route::patch('/room/{room}/edit', 'RoomsController@update');
+
 ////////
 
 // POSTS
