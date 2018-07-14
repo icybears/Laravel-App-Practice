@@ -37,7 +37,7 @@ class ActivityController extends Controller
         return view('activity.topPosts', compact('top_posts'));
     }
 
-    public function recentComments ()
+    public function activePosts ()
     {
         $user = User::find(auth()->id());        
         $rooms = $user->rooms()->pluck('room_id');        
@@ -47,7 +47,7 @@ class ActivityController extends Controller
             return ($rooms->contains($comment->post->room->id));
         });
 
-        return view('activity.recentComments', compact('recent_comments'));
+        return view('activity.activePosts', compact('recent_comments'));
         
     }
 

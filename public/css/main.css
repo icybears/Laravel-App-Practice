@@ -144,3 +144,10 @@ body {
   #activity-span{
     font-size: 1rem;
   }
+
+  #rooms  .card-columns {
+    column-count: 3;
+}
+#rooms .card{
+  display:inline-block;
+}

@@ -67,7 +67,7 @@ Route::get('/activity/posts/recent','ActivityController@recentPosts');
 
 Route::get('/activity/posts/top','ActivityController@topPosts');
 
-Route::get('/activity/comments/recent','ActivityController@recentComments');
+Route::get('activity/posts/active','ActivityController@activePosts');
 ////////////
 
 

@@ -1,23 +1,28 @@
-@extends('layouts.main')
-
+@extends('layouts.main') 
 @section('content')
 <div class="container">
     <div class="row">
         <h2 class="mb-5">Explore rooms</h2>
        
     </div>
-    <div class="card-deck">
-        @foreach($rooms as $room)
-        <div class="card text-center">
-                <a href='{{ url("/room/$room->id") }}'>
+    <div class="row">
+        <div id="rooms" class="card-columns">
+            @foreach($rooms as $room)
+
+            <div class="card text-center">
                 <div class="card-body">
-                <h5 class="card-title">{{$room->user->username}}'s room</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">{{$room->getRoomNameOrId()}} </h5>
+                    <p class="card-text">{{ $room->description ?? "This room doesn't have a description"}}</p>
+                    <p class="card-text"><small class="text-muted">{{ count($room->posts) ." ". str_plural("post", count($room->posts)) }}</small></p>
+                    <p class="card-text"><small class="text-muted">{{ count($room->users) ." ". str_plural("subscriber", count($room->users)) }}</small></p>
+                    <a class="btn btn-outline-success" href='{{ url("/room/$room->id") }}'>
+                       Enter 
+                    </a>
                 </div>
-            </a>
+            </div>
+    
+            @endforeach
         </div>
-        @endforeach
     </div>
 </div>
 @endsection
