@@ -13,12 +13,16 @@
                     @endif
         
                     @if(Auth::id() == $room->user->id )
-                        <a href='{{ url("/room/$room->id/edit") }}' class="btn btn-sm btn-primary float-right">Config Room</a>
+                        <a href='{{ url("/room/$room->id/edit") }}' class="btn btn-sm btn-primary float-right"><i class="fas fa-cog"></i> Room</a>
                     @else
                         @if(Auth::user()->isSubscribedTo($room))
-                            <a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn btn-sm btn-danger ">Unsubscribe</a>
+                            <a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn btn-sm btn-light ">Unsubscribe <i class="fas fa-times"></i>
+                                
+                                </a>
                         @else
-                            <a href='{{ url("/room/$room->id/subscribe") }}' class="btn btn-sm btn-primary ">Subscribe</a>
+                            <a href='{{ url("/room/$room->id/subscribe") }}' class="btn btn-sm btn-primary ">Subscribe <i class="fas fa-check"></i>
+                                
+                                </a>
                         @endif
                     @endif
         

@@ -3,46 +3,36 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link {{ stristr(Route::current()->uri,'activity/') ? 'active' : '' }}" href='{{ url("activity/posts/recent") }}'>
-                 Activity Feed
+                <i class="fas fa-chart-line"></i> Activity Feed
               </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ stristr(Route::current()->uri,'rooms') ? 'active' : '' }}" href='{{ url("/rooms") }}'>
-                   Explore Rooms
+                  <i class="fas fa-globe"></i>
+                     Explore Rooms
                 </a>
               </li>
             <li class="nav-item">
               <a class="nav-link {{ stristr(Route::current()->uri,'room/{room}') ? 'active' : '' }}" href='{{ url("/room/" . Auth::user()->room_id)}}'>
-                My Room
+                <i class="fas fa-couch"></i>
+                
+                 My Room
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link {{ stristr(Route::current()->uri,'profile/{user}') ? 'active' : '' }}" href='{{ url("/profile/" . Auth::id()) }}'>
-                My Profile
+                <i class="fas fa-user-circle"></i> My Profile                
               </a>
             </li>
+            <div><hr></div>
+            <li class="nav-item">
+                <a class="nav-link " href='{{ url("logout") }}'>
+                  <i class="fas fa-sign-out-alt"></i> Logout 
+                </a>
+              </li>
           </ul>
 
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a class="d-flex align-items-center text-muted" href="#">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-          <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Current month
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Last quarter
-              </a>
-            </li>
+          
            
-          </ul>
         </div>
       </nav>

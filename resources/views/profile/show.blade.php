@@ -20,7 +20,7 @@
                         <div class="col-4">
                                 <div id="imgPreviewWrapper"><img id="imgPreview" src='{{ $user->getImage() }}' alt="{{ $user->username . ' profile image' }}"> </div>
                                @if(Auth::id() == $user->id)
-                               <a class="btn btn-primary mt-4" href='{{ url("/profile/". Auth::id() . "/edit") }}' role="button">Edit Profile</a>
+                               <a class="btn btn-primary mt-4" href='{{ url("/profile/". Auth::id() . "/edit") }}' role="button"> Edit Profile <i class="fas fa-edit"></i></a>
                                @endif
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="text-muted">This User is not subscribed to any room</div>
                 @endif
                 @foreach($user->rooms as $room)
-                    <li class="list-group-item">{{ $room->name }}&nbsp;<a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn-sm btn-link ">unsubscribe</a></li>
+                    <li class="list-group-item">{{ $room->name }}&nbsp;<a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn-sm btn-link ">unsubscribe <i class="fas fa-times"></i></a></li>
                 @endforeach
             </ul>
         </div>

@@ -8,14 +8,14 @@
                      <a href='{{url("/room/$room->id/posts/$post->id")}}'>Post link</a> 
                         @if(auth()->id() == $post->user->id)
                         <button class="post-delete-btn btn btn-sm btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
-                                &times;
+                            <i class="fas fa-times"></i>
                             </button>
                         <button class="post-edit-btn btn btn-sm btn-outline-primary float-right mr-1" data-toggle="modal" data-target="#updateModal{{$post->id}}">
-                                edit
+                           Edit <i class="fas fa-pen"></i>
                         </button>
                         @elseif(auth()->user()->room_id == $room->id)
                         <button class="post-delete-btn btn btn-sm btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
-                            &times;
+                            <i class="fas fa-times"></i>
                         </button>
                         @endif
                        
