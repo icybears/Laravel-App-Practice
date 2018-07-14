@@ -2,7 +2,7 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link " href="/">
+              <a class="nav-link {{ stristr(Route::current()->uri,'activity/') ? 'active' : '' }}" href='{{ url("activity/posts/recent") }}'>
                  Activity Feed
               </a>
             </li>

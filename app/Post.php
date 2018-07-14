@@ -48,4 +48,9 @@ class Post extends Model
             ->delete();        
         }
     }
+
+    public function getShortBody($max_chars = 120)
+    {
+        return str_limit($this->body, $max_chars, ' (...)');
+    }
 }

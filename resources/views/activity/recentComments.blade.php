@@ -2,14 +2,18 @@
 
 @section('current')
 
-<div class="row mt-3">
-        <ul class="list-group col-5">
-            <h3>Recent comments</h3>
-            @foreach($recent_comments as $comment)
-              <li class="list-group-item">
-                {{ $comment->post->room->getRoomNameOrId() }} : latest comment {{ $comment->created_at->diffForHumans() }}
-              </li>
-            @endforeach
-          </ul>
+<div class="row ">
+   <div class="col-6 offset-3">
+          <ul class="list-group mt-4">
+              <h3>Recently commented</h3>
+              @foreach($recent_comments as $comment)
+                <li class="list-group-item">
+                  {{ $comment->post->room->getRoomNameOrId() }} 
+                  <p>{{  $comment->post->getShortBody() }} <span class="text-muted">{{ $comment->created_at->diffForHumans() }}</span></p>
+                  
+                </li>
+              @endforeach
+            </ul>
+   </div>
 </div>
 @endsection
