@@ -23,7 +23,10 @@ class Room extends Model
         return $this->belongsToMany(User::class);
     }
 
-   
+    public function getRoomNameOrId ()
+    {
+        return is_null($this->name) ? 'Room ' . $this->id : $this->name;
+    }
     public function incrementPostsCount()
     {
         $this->posts_count++;

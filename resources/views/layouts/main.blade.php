@@ -25,7 +25,7 @@
 
         @include('partials.main-sidebar')
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-2">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 my-4">
             
 
             @yield('content')

@@ -27,9 +27,10 @@
         </div>
       </div>
 
-      <div class="card mx-auto">
+      <div class="card mx-auto mt-3">
         <div class="card-body">
             <h3>Subscribed rooms</h3>
+            <hr>
             <ul class="list-group w-50">
                 @if(!count($user->rooms))
                     <div class="text-muted">This User is not subscribed to any room</div>

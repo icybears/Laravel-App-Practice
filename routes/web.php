@@ -62,4 +62,12 @@ Route::get('/profile/{user}/edit', 'ProfileController@edit');
 Route::patch('/profile/{user}/', 'ProfileController@update');
 ///////////
 
+// ACTIVITY
+Route::get('/activity/posts/recent','ActivityController@recentPosts');
+
+Route::get('/activity/posts/top','ActivityController@topPosts');
+
+Route::get('/activity/comments/recent','ActivityController@recentComments');
+////////////
+
 

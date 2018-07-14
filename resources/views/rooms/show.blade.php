@@ -6,8 +6,8 @@ use Illuminate\Support\Str;
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h2">{{ $room->name ? $room->name : 'Room' . $room->id }}
-        
+    <h1 class="h2">{{ $room->getRoomNameOrId() }}
+
            @if(!$room->name && Auth::id() == $room->user->id)
                 <a href='{{ url("/room/$room->id/edit") }}' class="btn btn-sm btn-outline-primary">Set your room name</a>
             @endif
