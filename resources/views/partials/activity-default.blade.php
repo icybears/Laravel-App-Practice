@@ -1,0 +1,1 @@
+<h3 class="text-muted font-weight-light">Nothing to show here, <a href='{{ url("/rooms") }}'>find rooms to follow here</a></h3>

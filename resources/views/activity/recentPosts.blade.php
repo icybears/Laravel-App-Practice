@@ -5,12 +5,14 @@
         <div class="col-8 offset-2">
             <ul class="list-group mt-4">
               <h3>Recent posts</h3>
+              @if(! count($recent_posts))
+                @include('partials.activity-default')
+              @endif
               @foreach($recent_posts as $post)
                 <li class="list-group-item mt-3">
                     <p> {{ $post->getShortBody() }}</p>
-                <p>In <a href=''>{{ $post->room->getRoomNameOrId() }}</a> by <a href=''>{{ $post->user->username }}</a> &ndash; <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span></p>
-                  
-                    <a href='' class="btn btn-outline-primary float-right">Read</a>
+                <p>In <a href='{{ url("room/" . $post->room->id)}}'>{{ $post->room->getRoomNameOrId() }}</a> by <a href='{{ url("/profile/" . $post->user->id) }}'>{{ $post->user->username }}</a> <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span></p>
+                    <a href='{{ url("room/" . $post->room->id . "/posts/$post->id") }}' class="btn btn-outline-primary float-right">Read</a>
                 </li>
               @endforeach
             </ul>
