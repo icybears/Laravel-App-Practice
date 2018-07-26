@@ -33,6 +33,7 @@ Route::get('/room/{room}/subscribe', 'RoomsController@subscribe');
 
 Route::get('/room/{room}/unsubscribe', 'RoomsController@unsubscribe');
 
+Route::get('/rooms/search', 'RoomsController@search');
 
 ////////
 
@@ -69,5 +70,14 @@ Route::get('/activity/posts/top','ActivityController@topPosts');
 
 Route::get('activity/posts/active','ActivityController@activePosts');
 ////////////
+
+
+// ACCOUNT
+
+Route::get('/account','AccountController@index');
+
+Route::patch('/account/email','AccountController@changeEmail');
+
+Route::patch('/account/password', 'AccountController@changePassword');
 
 

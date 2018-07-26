@@ -12,9 +12,10 @@ class RoomsController extends Controller
         $this->middleware('auth');
     }
 
+
     public function index()
     {
-        $rooms = Room::all();
+        $rooms = Room::orderBy('posts_count','desc')->paginate(15);
 
         return view('rooms.index', compact('rooms'));
     }
@@ -62,7 +63,17 @@ class RoomsController extends Controller
         return back();
     }
 
+    public function search()
+    {
+        $this->validate(request(),
+        ['query' => 'required|min:4| max:120']);
 
+        $rooms = Room::where('name','like','%' . request('query') . '%')
+            ->orWhere('description','like','%' . request('query') . '%')
+            ->paginate(15);
+
+        return view('rooms.index', compact('rooms'));
+    }
    
 
 

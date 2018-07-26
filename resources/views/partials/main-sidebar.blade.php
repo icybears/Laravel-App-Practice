@@ -24,6 +24,11 @@
                 <i class="fas fa-user-circle"></i> My Profile                
               </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ stristr(Route::current()->uri,'account') ? 'active' : '' }}" href='{{ url("/account") }}'>
+                  <i class="fas fa-cog"></i> Account                
+                </a>
+              </li>
             <div><hr></div>
             <li class="nav-item">
                 <a class="nav-link " href='{{ url("logout") }}'>
