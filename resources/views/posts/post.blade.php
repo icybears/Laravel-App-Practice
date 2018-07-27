@@ -1,4 +1,4 @@
-<div class="row post">
+<div class="row post mt-3">
     @include('partials.modal-delete-post')
     @include('partials.modal-update-post')
             <div class=" col-md-8 media border shadow-sm p-2 mb-3 bg-white rounded w-50 mx-auto">

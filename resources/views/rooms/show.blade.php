@@ -20,7 +20,7 @@
                                 
                                 </a>
                         @else
-                            <a href='{{ url("/room/$room->id/subscribe") }}' class="btn btn-sm btn-primary ">Subscribe <i class="fas fa-check"></i>
+                            <a href='{{ url("/room/$room->id/subscribe") }}' class="btn btn-sm btn-primary ">Subscribe <i class="fas fa-plus-circle"></i>
                                 
                                 </a>
                         @endif
@@ -40,10 +40,9 @@
             </div>
         </div>
 </div>
-    
     <hr>
-        @include('posts.create')
-    <hr>
+        @include('posts.create') 
+        <hr>       
     <section>
         @if(count($room->posts))
             @foreach($room->posts()->orderBy('updated_at','desc')->get() as $post)

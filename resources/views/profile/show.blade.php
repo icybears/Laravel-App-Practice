@@ -36,7 +36,12 @@
                     <div class="text-muted">This User is not subscribed to any room</div>
                 @endif
                 @foreach($user->rooms as $room)
-                    <li class="list-group-item">{{ $room->name }}&nbsp;<a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn-sm btn-link ">unsubscribe <i class="fas fa-times"></i></a></li>
+                    <li class="list-group-item"> 
+                        <a href='{{ url("/room/$room->id") }}'>{{ $room->getRoomNameOrId() }}</a>&nbsp;
+                        @if( $user->id == auth()->id())
+                            <a href='{{ url("/room/$room->id/unsubscribe") }}' class="btn-sm btn-link ">unsubscribe <i class="fas fa-times"></i></a>
+                        @endif    
+                    </li>
                 @endforeach
             </ul>
         </div>
