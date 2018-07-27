@@ -9,6 +9,10 @@ use App\Comment;
 class ActivityController extends Controller
 {
   
+    public function __contruct()
+    {
+        $this->middleware('auth');
+    }
 
     public function recentPosts ()
     {

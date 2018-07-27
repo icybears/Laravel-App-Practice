@@ -11,6 +11,12 @@ use App\Room;
 
 class CommentsController extends Controller
 {
+
+    public function __contruct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store (Room $room, Post $post)
     {
         $this->validate(request(),[

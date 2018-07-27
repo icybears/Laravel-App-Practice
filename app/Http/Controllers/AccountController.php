@@ -8,6 +8,11 @@ use App\User;
 
 class AccountController extends Controller
 {
+    public function __contruct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index ()
     {
         return view('account');

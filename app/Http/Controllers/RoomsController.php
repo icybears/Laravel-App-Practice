@@ -10,6 +10,7 @@ class RoomsController extends Controller
     public function __construct ()
     {
         $this->middleware('auth');
+        $this->middleware('room')->only('edit','update');
     }
 
 
