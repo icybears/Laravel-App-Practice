@@ -20,7 +20,7 @@
                                 
                                 </a>
                         @else
-                            <a href='{{ url("/room/$room->id/subscribe") }}' class="btn btn-sm btn-primary ">Subscribe <i class="fas fa-plus-circle"></i>
+                            <a href='{{ url("/room/$room->id/subscribe") }}' class="btn btn-sm btn-primary ">Subscribe <i class="fas fa-plus fa-sm"></i>
                                 
                                 </a>
                         @endif
