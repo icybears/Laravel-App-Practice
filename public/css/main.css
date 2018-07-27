@@ -1,6 +1,7 @@
 body {
     font-size: 1rem;
-    background-color: #f3f3f3;
+    background-color: #F6F6F6;
+   
   }
   
 
@@ -150,4 +151,15 @@ body {
 }
 #rooms .card{
   display:inline-block;
+}
+
+#brand {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+
+.card{
+  border-top: solid 4px #007bff;
 }

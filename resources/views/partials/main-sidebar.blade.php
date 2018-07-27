@@ -1,6 +1,9 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+<nav class="col-md-2 d-none d-md-block bg-white sidebar">
+    <div id="brand" class="text-center bg-primary py-3 ">
+      <a class="text-white" href="#">Your Social Media</a>
+    </div>    
         <div class="sidebar-sticky">
-          <ul class="nav flex-column">
+          <ul class="nav flex-column mt-2">
           
             <li class="nav-item">
                 <a class="nav-link {{ stristr(Route::current()->uri,'rooms') ? 'active' : '' }}" href='{{ url("/rooms") }}'>
