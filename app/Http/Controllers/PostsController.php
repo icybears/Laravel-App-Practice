@@ -68,6 +68,6 @@ class PostsController extends Controller
 
         Post::destroy($post->id);
 
-        return redirect()->back();
+        return redirect("/room/$room->id");
     }
 }

@@ -50,7 +50,7 @@ class ProfileController extends Controller
             Storage::disk('public')->put("users_profile_image/$imageName", file_get_contents($uploadedImage));
         }
         else {
-            $imageName = null;
+            $imageName = "default.jpg";
         }
         
         

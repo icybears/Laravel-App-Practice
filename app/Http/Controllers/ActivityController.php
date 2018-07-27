@@ -22,7 +22,7 @@ class ActivityController extends Controller
 
         $recent_posts = $posts->filter(function ($post, $key) use ($rooms) {
             return ($rooms->contains($post->room->id));
-        });
+        })->take(10);
     
     
         return view('activity.recentPosts', compact('recent_posts'));
@@ -36,7 +36,7 @@ class ActivityController extends Controller
              
         $top_posts = $posts->filter(function ($post, $key) use ($rooms) {
             return ($rooms->contains($post->room->id));
-        });
+        })->take(10);
 
         return view('activity.topPosts', compact('top_posts'));
     }
@@ -49,7 +49,7 @@ class ActivityController extends Controller
 
         $recent_comments = $comments->filter(function ($comment, $key) use ($rooms) {
             return ($rooms->contains($comment->post->room->id));
-        });
+        })->take(10);
 
         return view('activity.activePosts', compact('recent_comments'));
         

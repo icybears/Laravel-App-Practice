@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index () {
         if(auth()->check()){           
      
-            return redirect()->action('ActivityController@recentPosts');
+            return redirect()->action('RoomsController@index');
         }
         else {
             return view('layouts.landing');

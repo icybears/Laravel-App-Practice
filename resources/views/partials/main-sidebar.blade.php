@@ -1,17 +1,18 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link {{ stristr(Route::current()->uri,'activity/') ? 'active' : '' }}" href='{{ url("activity/posts/recent") }}'>
-                <i class="fas fa-chart-line"></i> Activity Feed
-              </a>
-            </li>
+          
             <li class="nav-item">
                 <a class="nav-link {{ stristr(Route::current()->uri,'rooms') ? 'active' : '' }}" href='{{ url("/rooms") }}'>
                   <i class="fas fa-globe"></i>
                      Explore Rooms
                 </a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link {{ stristr(Route::current()->uri,'activity/') ? 'active' : '' }}" href='{{ url("activity/posts/recent") }}'>
+                    <i class="fas fa-chart-line"></i> Activity Feed
+                  </a>
+                </li>
             <li class="nav-item">
               <a class="nav-link {{ stristr(Route::current()->uri,'room/{room}') ? 'active' : '' }}" href='{{ url("/room/" . Auth::user()->room_id)}}'>
                 <i class="fas fa-couch"></i>

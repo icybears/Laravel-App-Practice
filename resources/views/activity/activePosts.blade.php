@@ -13,8 +13,8 @@
                 <li class="list-group-item mt-3">
                   
                   <p>{{  $comment->post->getShortBody() }}</p>
-                  <p>In <a href='{{ url("room/" . $comment->post->room->id)}}'>{{ $comment->post->room->getRoomNameOrId() }}</a> by <a href='{{ url("/profile/" . $comment->post->user->id) }}'>{{ $comment->post->user->username }}</a>  <span class="text-muted">commented {{ $comment->created_at->diffForHumans() }}</span></p>
                   <a href='{{ url("room/" . $comment->post->room->id . "/posts/" . $comment->post->id) }}' class="btn btn-outline-primary float-right">Read</a>
+                  <p>In <a href='{{ url("room/" . $comment->post->room->id)}}'>{{ $comment->post->room->getRoomNameOrId() }}</a> by <a href='{{ url("/profile/" . $comment->post->user->id) }}'>{{ $comment->post->user->username }}</a>  <span class="text-muted">commented {{ $comment->created_at->diffForHumans() }}</span></p>
                 </li>
               @endforeach
             </ul>

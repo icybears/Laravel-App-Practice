@@ -3,7 +3,7 @@
     @include('partials.modal-update-post')
             <div class=" col-md-8 media border shadow-sm p-2 mb-3 bg-white rounded w-50 mx-auto">
                 <div class="minImgWrapper"><a href='{{ url("/profile/" . $post->user->id) }}'><img class="minImg mr-3 rounded-circle" src='{{ $post->user->getImage() }}' alt="{{ $post->user->username . ' profile image' }}"></a></div>
-                <div class="ml-1 media-body">
+                <div class="ml-2 media-body">
                     <h5 class="mt-0"><a href='{{ url("/profile/" . $post->user->id) }}'>{{ $post->user->username }}</a>
                         @if(auth()->id() == $post->user->id)
                         <button class="post-delete-btn btn btn-sm btn-outline-danger float-right" data-toggle="modal" data-target="#deleteModal{{$post->id}}">
@@ -22,7 +22,7 @@
                      
                     {{ $post->body }}
                     <br>
-                    <span class="text-muted"> &bull; {{ $post->created_at->diffForHumans() }}</span>
+                    <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span>
                   
                         
                      <a href='{{url("/room/$room->id/posts/$post->id")}}' class="text-muted">&bull; link <i class="fas fa-link fa-xs"></i></a> 
