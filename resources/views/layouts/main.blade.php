@@ -30,7 +30,7 @@
 
         @include('partials.main-sidebar')
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-5 my-1">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-5  pb-5">
             
 
             @yield('content')

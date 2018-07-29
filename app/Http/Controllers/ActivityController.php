@@ -17,10 +17,11 @@ class ActivityController extends Controller
     public function recentPosts ()
     {
         $user = User::find(auth()->id());
-        $rooms = $user->rooms()->pluck('room_id');
+        $rooms = $user->rooms()->pluck('room_id');  
         $posts = Post::orderBy('created_at','desc')->get();
 
         $recent_posts = $posts->filter(function ($post, $key) use ($rooms) {
+         
             return ($rooms->contains($post->room->id));
         })->take(10);
     
