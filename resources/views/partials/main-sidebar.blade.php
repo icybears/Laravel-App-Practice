@@ -1,4 +1,4 @@
-<nav class="col-md-2 d-none d-md-block bg-white sidebar">
+<nav id="sidebar" class="col-sm-2  bg-white sidebar">
     <div id="brand" class="text-center bg-primary py-5 ">
       <a class="text-white" href="#">Your Social Media</a>
     </div>    
