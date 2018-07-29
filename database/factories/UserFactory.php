@@ -23,5 +23,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'interests' => $faker->sentence,
         'location' => $faker->city,
         'room_id' => 99999,
+        'image' => $faker->image(storage_path('\app\public\users_profile_image'), 400, 250,'', false)
     ];
 });

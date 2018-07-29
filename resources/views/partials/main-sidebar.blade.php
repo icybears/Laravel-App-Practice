@@ -1,11 +1,11 @@
 <nav class="col-md-2 d-none d-md-block bg-white sidebar">
-    <div id="brand" class="text-center bg-primary py-3 ">
+    <div id="brand" class="text-center bg-primary py-5 ">
       <a class="text-white" href="#">Your Social Media</a>
     </div>    
         <div class="sidebar-sticky">
-          <ul class="nav flex-column mt-2">
+          <ul class="nav flex-column mt-5">
           
-            <li class="nav-item">
+            <li class="nav-item mt-4">
                 <a class="nav-link {{ stristr(Route::current()->uri,'rooms') ? 'active' : '' }}" href='{{ url("/rooms") }}'>
                   <i class="fas fa-globe"></i>
                      Explore Rooms
@@ -17,14 +17,14 @@
                   </a>
                 </li>
             <li class="nav-item">
-              <a class="nav-link {{ stristr(Route::current()->uri,'room/{room}') ? 'active' : '' }}" href='{{ url("/room/" . Auth::user()->room_id)}}'>
+              <a class='nav-link {{ request()->is("room/" . auth()->user()->room_id) ? "active": "" }}' href='{{ url("/room/" . Auth::user()->room_id)}}'>
                 <i class="fas fa-couch"></i>
                 
                  My Room
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ stristr(Route::current()->uri,'profile/{user}') ? 'active' : '' }}" href='{{ url("/profile/" . Auth::id()) }}'>
+              <a class='nav-link {{ request()->is("profile/" . auth()->id()) ? "active" : "" }}' href='{{ url("/profile/" . Auth::id()) }}'>
                 <i class="fas fa-user-circle"></i> My Profile                
               </a>
             </li>
