@@ -6,6 +6,9 @@
 <form method="POST" action="/login" class="form-signin">
 
     <h1 class="h3 mb-4 font-weight-normal ">Login to your account</h1>
+    <div class=" alert alert-info" role="alert">
+            Test account: test@test.com/testpw12
+    </div>
     @include('partials.errors')
     @include('partials.message')
     {{ csrf_field() }}

@@ -8,13 +8,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>LikeMinded: Find and Join Like Minded People</title>
+    <title>Monolith: Find and Join Like Minded People</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset('css/cover.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
   </head>
 
   <body class="text-center">
@@ -22,7 +23,7 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
-            <a class="navbar-brand masthead-brand" href="#">LikeMinded</a>
+            <a class="navbar-brand masthead-brand" href="#">Monolith</a>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
             <a class="nav-link" href="/register">Register</a>            
@@ -33,10 +34,10 @@
       
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">LikeMinded</h1>
+        <h1 class="cover-heading">Monolith</h1>
         <p class="lead">Find and Join Like Minded People and Discuss your Favorite Topics</p>
         <p class="lead">
-          <div><a href="/register" class="btn btn-lg btn-secondary">Register</a></div>
+          <div><a href="/register" class="btn btn-lg btn-primary">Get Started</a></div>
           <a href="/login" class="">Already have an account ? Login</a>          
         </p>
       </main>

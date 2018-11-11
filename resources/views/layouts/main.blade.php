@@ -8,13 +8,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>LikeMinded</title>
+    <title>Monolith</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
     
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">

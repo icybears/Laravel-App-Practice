@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset('css/signin.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
   </head>
 
   <body class="text-center">
