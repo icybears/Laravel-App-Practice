@@ -53,15 +53,13 @@ body::before{
   background-repeat: no-repeat;
   background-size: cover;
 
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px) brightness(60%);
+  
+  filter: brightness(60%);
 }
 
 .cover-container {
   max-width: 42em;
+  margin:0 auto;
 }
 
 
@@ -92,7 +90,10 @@ body::before{
 .nav-masthead .nav-link + .nav-link {
   margin-left: 1rem;
 }
-
+.masthead-brand{
+  margin:0;
+  text-align: center;
+}
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;

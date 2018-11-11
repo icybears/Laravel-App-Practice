@@ -24,8 +24,8 @@
                     <br>
                     <span class="text-muted">{{ $post->created_at->diffForHumans() }}</span>
                   
-                        
-                     <a href='{{url("/room/$room->id/posts/$post->id")}}' class="text-muted">&bull; link <i class="fas fa-link fa-xs"></i></a> 
+                    &ndash;
+                     <a href='{{url("/room/$room->id/posts/$post->id")}}' class="text-muted">link <i class="fas fa-link fa-xs"></i></a> 
                     
                     @include('comments.create')
     

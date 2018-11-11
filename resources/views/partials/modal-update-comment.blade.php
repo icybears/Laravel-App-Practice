@@ -11,7 +11,7 @@
               </button>
             </div>
             @include('partials.errors')
-            <form method="POST" action='{{ url("/room/$room->id/posts/$post->id/comments/$comment->id") }}'>
+            <form id="formUpdateComment{{$comment->id}}" method="POST" action='{{ url("/room/$room->id/posts/$post->id/comments/$comment->id") }}'>
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
                 <div class="modal-body">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Edit comment</button>
+                        <button type="button" class="btn btn-primary" onclick="sendForm('formUpdateComment{{$comment->id}}', this)">Edit comment</button>
                 </div>
             </form>
           </div>

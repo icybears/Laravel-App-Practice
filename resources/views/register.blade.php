@@ -28,8 +28,7 @@ Create an account
 
   <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Register</button>
   <a href="{{ route('login') }}">Already have an account ? Login</a>
-  
-<p class="mt-5 mb-3 text-muted">&copy; 2018</p>
+
 
 </form>
     

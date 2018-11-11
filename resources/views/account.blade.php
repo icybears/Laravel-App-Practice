@@ -6,7 +6,7 @@
 <div class="card mx-auto">
         <div class="card-body">
             <h3>Change Email</h3>
-                <form class="row " method="POST" action='{{ url("/account/email") }}' >
+                <form id="changeEmailForm" class="row " method="POST" action='{{ url("/account/email") }}' >
                     {{ method_field('PATCH') }}
                     {{ csrf_field() }}
                     
@@ -29,7 +29,7 @@
                          
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary px-4">Change Email</button>
+                            <button type="button" onclick="sendForm('changeEmailForm',this)" class="btn btn-primary px-4">Change Email</button>
                         </div>
                     </form>
         </div>
@@ -38,7 +38,7 @@
       <div class="card mx-auto mt-4">
         <div class="card-body">
             <h3>Change Password</h3>
-                <form class="row " method="POST" action='{{ url("/account/password") }}'  >
+                <form id="changePasswordForm" class="row " method="POST" action='{{ url("/account/password") }}'  >
                     {{ method_field('PATCH') }}
                     {{ csrf_field() }}
                      
@@ -60,7 +60,7 @@
                          
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary px-4">Change Password</button>
+                            <button type="button" onclick="sendForm('changePasswordForm',this)" class="btn btn-primary px-4">Change Password</button>
                         </div>
                     </form>
         </div>

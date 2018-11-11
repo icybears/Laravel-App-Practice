@@ -21,16 +21,17 @@ body::before{
   min-height: 100%;
   width:100%;
   z-index: -1;
-  background-image: url('../img/bg2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+  background-color:rgba(162, 207, 255, 0.71);
+  /* background-image: url('../img/memphis-colorful.png'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: bottom; */
 
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
   -o-filter: blur(1px);
   -ms-filter: blur(1px);
-  filter: blur(1px) brightness(80%);
+  filter: blur(1px);
 }
 
 .form-signin {

@@ -3,7 +3,7 @@
 
 <div class="card mx-auto">
         <div class="card-body">
-                <form class="row " method="POST" action='{{ url("/profile/" . $user->id) }}' enctype="multipart/form-data" >
+                <form id="editProfileForm"class="row " method="POST" action='{{ url("/profile/" . $user->id) }}' enctype="multipart/form-data" >
                     {{ method_field('PATCH') }}
                     {{ csrf_field() }}
                         <div class="col-12">
@@ -40,7 +40,7 @@
                              
                         </div>
                         <div class="col">
-                            <button type="submit" class="btn btn-primary px-4">Save</button>
+                            <button type="button" onclick="sendForm('editProfileForm',this)" class="btn btn-primary px-4">Save</button>
                         </div>
                     </form>
         </div>

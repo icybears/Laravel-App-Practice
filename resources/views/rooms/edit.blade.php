@@ -3,7 +3,7 @@
 
 <div class="card mx-auto">
         <div class="card-body">
-                <form  method="POST" action='' >
+                <form id="editRoomForm" method="POST" action='' >
                     {{ method_field('PATCH') }}
                     {{ csrf_field() }}
                        <div class="row">
@@ -26,7 +26,7 @@
                        </div>
               
                         <div>
-                            <button type="submit" class="btn btn-primary px-4">Save</button>
+                            <button type="button" onclick="sendForm('editRoomForm',this)" class="btn btn-primary px-4">Save</button>
                         </div>
                     </form>
         </div>

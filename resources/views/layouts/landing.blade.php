@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>My App</title>
+    <title>LikeMinded: Find and Join Like Minded People</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -22,7 +22,8 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
-          <nav class="nav nav-masthead justify-content-left">
+            <a class="navbar-brand masthead-brand" href="#">LikeMinded</a>
+          <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
             <a class="nav-link" href="/register">Register</a>            
             <a class="nav-link" href="/login">Login</a>
@@ -32,8 +33,8 @@
       
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Your Social Media</h1>
-        <p class="lead">Morbi vehicula tempor suscipit. Duis ornare lobortis orci. Donec lacinia nunc eu pharetra ultricies. Donec eget condimentum leo, vitae semper metus. Donec porta fringilla posuere. Quisque laoreet eget mi in sagittis.</p>
+        <h1 class="cover-heading">LikeMinded</h1>
+        <p class="lead">Find and Join Like Minded People and Discuss your Favorite Topics</p>
         <p class="lead">
           <div><a href="/register" class="btn btn-lg btn-secondary">Register</a></div>
           <a href="/login" class="">Already have an account ? Login</a>          
@@ -42,7 +43,7 @@
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p> &copy; 2018</p>
+          <p class="text-white"> &copy; 2018 Sabercrafts </p>
         </div>
       </footer>
     </div>

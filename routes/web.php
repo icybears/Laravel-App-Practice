@@ -27,11 +27,11 @@ Route::get('/room/{room}', 'RoomsController@show')->name('room');
 
 Route::get('/room/{room}/edit', 'RoomsController@edit');
 
-Route::patch('/room/{room}/edit', 'RoomsController@update');
+Route::patch('/room/{room}/edit', 'RoomsController@update')->middleware('throttle:10,1');
 
-Route::get('/room/{room}/subscribe', 'RoomsController@subscribe');
+Route::get('/room/{room}/subscribe', 'RoomsController@subscribe')->middleware('throttle:50,1');
 
-Route::get('/room/{room}/unsubscribe', 'RoomsController@unsubscribe');
+Route::get('/room/{room}/unsubscribe', 'RoomsController@unsubscribe')->middleware('throttle:50,1');
 
 Route::get('/rooms/search', 'RoomsController@search');
 
@@ -40,19 +40,22 @@ Route::get('/rooms/search', 'RoomsController@search');
 // POSTS
 Route::get('/room/{room}/posts/{post}', 'PostsController@show');
 
-Route::post('/room/{room}/posts', 'PostsController@store');
 
-Route::delete('/room/{room}/posts/{post}', 'PostsController@destroy');
 
-Route::patch('/room/{room}/posts/{post}', 'PostsController@update');
+Route::post('/room/{room}/posts', 'PostsController@store')->middleware('throttle:10,1');
+
+
+Route::delete('/room/{room}/posts/{post}', 'PostsController@destroy')->middleware('throttle:20,1');
+
+Route::patch('/room/{room}/posts/{post}', 'PostsController@update')->middleware('throttle:10,1');
 /////////
 
 // COMMENTS
-Route::delete('/room/{room}/posts/{post}/comments/{comment}','CommentsController@destroy');
+Route::delete('/room/{room}/posts/{post}/comments/{comment}','CommentsController@destroy')->middleware('throttle:20,1');
 
-Route::post('/room/{room}/posts/{post}/comments','CommentsController@store');
+Route::post('/room/{room}/posts/{post}/comments','CommentsController@store')->middleware('throttle:15,1');
 
-Route::patch('/room/{room}/posts/{post}/comments/{comment}','CommentsController@update');
+Route::patch('/room/{room}/posts/{post}/comments/{comment}','CommentsController@update')->middleware('throttle:10,1');
 ////////////
 
 // PROFILE
@@ -60,7 +63,7 @@ Route::get('/profile/{user}', 'ProfileController@show')->name('profile');
 
 Route::get('/profile/{user}/edit', 'ProfileController@edit');
 
-Route::patch('/profile/{user}/', 'ProfileController@update');
+Route::patch('/profile/{user}/', 'ProfileController@update')->middleware('throttle:10,1');
 ///////////
 
 // ACTIVITY
@@ -76,8 +79,8 @@ Route::get('activity/posts/active','ActivityController@activePosts');
 
 Route::get('/account','AccountController@index');
 
-Route::patch('/account/email','AccountController@changeEmail');
+Route::patch('/account/email','AccountController@changeEmail')->middleware('throttle:5,1');
 
-Route::patch('/account/password', 'AccountController@changePassword');
+Route::patch('/account/password', 'AccountController@changePassword')->middleware('throttle:5,1');
 
 

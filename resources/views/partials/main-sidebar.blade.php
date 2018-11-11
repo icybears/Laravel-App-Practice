@@ -1,6 +1,6 @@
 <nav id="sidebar" class="col-sm-2  bg-white sidebar">
-    <div id="brand" class="text-center bg-primary py-5 ">
-      <a class="text-white" href="#">Your Social Media</a>
+    <div id="brand" class="text-center bg-primary py-2 ">
+      <a class="text-white" href="#">LikeMinded</a>
     </div>    
         <div class="sidebar-sticky">
           <ul class="nav flex-column mt-5">

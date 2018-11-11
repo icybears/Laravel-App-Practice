@@ -15,10 +15,10 @@
             </div>
             <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <form method="POST" action='{{ url("/room/$room->id/posts/$post->id") }}'>
+                    <form id="formDeletePost{{$post->id}}"method="POST" action='{{ url("/room/$room->id/posts/$post->id") }}'>
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <button type="submit" class="btn btn-danger">Yes, delete</button>
+                        <button type="button" class="btn btn-danger" onclick="sendForm('formDeletePost{{$post->id}}',this)">Yes, delete</button>
                     </form>
             </div>
           </div>
